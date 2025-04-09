@@ -30,10 +30,10 @@ const BookingsList = (props) => {
     let oldBookings = props.bookings ? props.bookings.filter(b => new Date(b.from) <= curDate) : []
 
     upcomingBookings = upcomingBookings.filter(b => {
-        return b.hotel.name.toLowerCase().includes(query.toString().toLowerCase())
+        return b.hotel && b.hotel.name && b.hotel.name.toLowerCase().includes(query.toString().toLowerCase())
     })
     oldBookings = oldBookings.filter(b => {
-        return b.hotel.name.toLowerCase().includes(query.toString().toLowerCase())
+        return b.hotel && b.hotel.name && b.hotel.name.toLowerCase().includes(query.toString().toLowerCase())
     })
 
     return (
